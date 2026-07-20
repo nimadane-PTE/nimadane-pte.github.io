@@ -6,110 +6,74 @@
 <title>Nima Daneshvarnejad</title>
 <meta name="description" content="Nima Daneshvarnejad — Ph.D. Petroleum Engineering, USC. Methane emission monitoring, AI-driven modeling, and legacy asset management.">
 <style>
-  :root {
-    --ink: #1b1b1b;
-    --muted: #565656;
-    --accent: #12616b;      /* deep petrol / teal */
-    --accent-dark: #0d474e;
-    --rule: #e2e2e2;
-    --bg: #ffffff;
-    --chip: #f4f6f6;
-  }
-  * { box-sizing: border-box; }
   body {
-    margin: 0 auto;
-    max-width: 760px;
-    line-height: 1.6;
-    font-size: 18px;
-    color: var(--ink);
-    padding: 48px 20px 64px;
-    background: var(--bg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    margin: 40px auto;
+    max-width: 780px;
+    line-height: 1.45;
+    font-size: 17px;
+    color: #000;
+    background: #fff;
+    padding: 0 16px;
+    font-family: "Times New Roman", Times, serif;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { color: var(--accent-dark); text-decoration: underline; }
-
-  /* Header */
-  header { display: flex; gap: 24px; align-items: flex-start; margin-bottom: 8px; }
-  .header-text { flex: 1; min-width: 0; }
-  h1 { font-size: 2.1em; margin: 0 0 2px; letter-spacing: -0.01em; }
-  .subtitle { font-size: 1.08em; color: var(--muted); margin: 0 0 10px; }
-  .photo {
-    width: 150px; height: 150px; object-fit: cover;
-    border-radius: 8px; border: 1px solid var(--rule); flex-shrink: 0;
-  }
-  .contact { color: var(--muted); font-size: 0.95em; margin: 0 0 14px; }
-
-  /* Link chips */
-  .links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 4px; }
-  .chip {
-    display: inline-block; padding: 5px 13px; border-radius: 999px;
-    background: var(--chip); border: 1px solid var(--rule);
-    font-size: 0.9em; color: var(--accent); font-weight: 600;
-  }
-  .chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); text-decoration: none; }
-
-  /* Sections */
+  a { color: #0000ee; }
+  a:visited { color: #551a8b; }
+  h1 { font-size: 2.1em; margin: 0 0 2px; }
+  .subtitle { font-size: 1.15em; margin: 0 0 6px; }
   h2 {
-    font-size: 1.18em; margin: 36px 0 10px; padding-bottom: 6px;
-    border-bottom: 2px solid var(--accent);
-    color: var(--accent-dark); letter-spacing: 0.01em;
+    font-size: 1.3em;
+    margin: 24px 0 8px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #000;
   }
-  ul { padding-left: 20px; margin: 8px 0; }
-  li { margin-bottom: 7px; }
-
-  .pub { margin-bottom: 14px; }
-  .pub .venue { font-weight: 700; }
+  .photo {
+    float: right;
+    width: 165px;
+    margin: 4px 0 12px 22px;
+    border: 1px solid #000;
+  }
+  .contact { margin: 0 0 10px; }
+  .btns { margin: 0 0 6px; }
+  .btns a {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 3px 12px;
+    margin: 0 6px 6px 0;
+    text-decoration: none;
+    color: #0000ee;
+  }
+  .btns a:hover { background: #eee; }
+  ul { padding-left: 22px; margin: 8px 0; }
+  li { margin-bottom: 5px; }
+  .pub { margin-bottom: 12px; }
   .pub .title { font-style: italic; }
-  .meta { color: var(--muted); font-size: 0.95em; }
-
-  .two-col { columns: 2; column-gap: 32px; }
-  .two-col li { margin-bottom: 3px; break-inside: avoid; }
-
-  footer { margin-top: 44px; padding-top: 14px; border-top: 1px solid var(--rule); color: #888; font-size: 0.85em; }
-
-  @media (max-width: 540px) {
-    body { font-size: 17px; padding: 32px 16px 48px; }
-    header { flex-direction: column-reverse; align-items: center; text-align: center; }
-    .photo { width: 130px; height: 130px; }
-    .links { justify-content: center; }
+  .two-col { columns: 2; column-gap: 30px; }
+  .two-col li { margin-bottom: 2px; break-inside: avoid; }
+  footer { margin-top: 34px; border-top: 1px solid #000; padding-top: 8px; font-size: 0.85em; color: #333; }
+  @media (max-width: 520px) {
+    .photo { float: none; display: block; width: 150px; margin: 0 0 12px; }
     .two-col { columns: 1; }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="header-text">
-    <h1>Nima Daneshvarnejad</h1>
-    <p class="subtitle">Ph.D. Petroleum Engineering &mdash; University of Southern California</p>
-    <p class="contact">
-      <a href="mailto:nimadane@usc.edu">nimadane@usc.edu</a> &bull;
-      (310) 290-6968 &bull; U.S. Citizen
-    </p>
-    <div class="links">
-      <a class="chip" href="https://www.linkedin.com/in/nimadane/">LinkedIn</a>
-      <a class="chip" href="https://scholar.google.com/citations?user=mGlNNqAAAAAJ&hl=en">Google Scholar</a>
-      <a class="chip" href="resume.pdf">Resume (PDF)</a>
-      <!-- Upload resume.pdf to the repo for this to work -->
-      <a class="chip" href="resume.pdf">Resume (PDF)</a>
-    </div>
-  </div>
-  <!-- Upload your headshot as photo.jpg next to this file. Until then, this shows a broken image icon. -->
-  <img class="photo" src="photo.jpg" alt="Nima Daneshvarnejad">
-</header>
+<img class="photo" src="photo.jpg" alt="Nima Daneshvarnejad">
 
-<h2>About</h2>
-<p>
-  I'm a Ph.D. candidate in Petroleum Engineering at USC, where I study how to measure
-  and predict methane emissions from idle, orphaned, and abandoned wells. My work
-  combines field sensing &mdash; high-precision IoT sensors and ventilation canopies &mdash;
-  with computational fluid dynamics and machine learning to turn noisy, intermittent
-  leak signals into reliable emission estimates. I'm especially interested in using
-  these methods, together with carbon markets and sound policy, to scale the monitoring
-  and remediation of legacy energy assets across the U.S.
+<h1>Nima Daneshvarnejad</h1>
+<p class="subtitle">Ph.D. Petroleum Engineering &mdash; University of Southern California</p>
+
+<p class="contact">
+  Phone: (310) 290-6968 &bull;
+  Email: <a href="mailto:nimadane@usc.edu">nimadane@usc.edu</a> &bull;
+  U.S. Citizen
 </p>
+
+<div class="btns">
+  <a href="https://www.linkedin.com/in/nimadane/">LinkedIn</a>
+  <a href="https://scholar.google.com/citations?user=mGlNNqAAAAAJ&hl=en">Google Scholar</a>
+  <a href="resume.pdf" download>Download Resume (PDF)</a>
+</div>
 
 <h2>Summary</h2>
 <p>
@@ -126,16 +90,16 @@
 
 <h2>Focus Areas</h2>
 <p>
-  Risk assessment, energy asset life-cycle analysis, emission monitoring,
+  Risk assessment, energy assets life cycle analysis, emission monitoring,
   physically-constrained modeling, computational fluid dynamic modeling, well and
-  legacy asset integrity, airborne emission imaging, machine learning, time series
+  legacy assets integrity, airborne emission imaging, machine learning, time series
   prediction.
 </p>
 
 <h2>Education</h2>
 <ul>
   <li><strong>University of Southern California</strong>, Los Angeles, CA &mdash; Ph.D. Petroleum Engineering (Chevron Fellowship), April 2026.<br>
-    <span class="meta">Research focus: AI-driven methane emission monitoring and reservoir simulations.</span></li>
+    Research focus: AI-driven methane emission monitoring and reservoir simulations.</li>
   <li><strong>University of Southern California</strong>, Los Angeles, CA &mdash; M.S. Petroleum Engineering, May 2022.</li>
   <li><strong>Sharif University of Technology</strong> &mdash; B.S. Petroleum Engineering, June 2018.</li>
 </ul>
@@ -150,34 +114,29 @@
 
 <h2>Publications</h2>
 <div class="pub">
-  <span class="venue">MDPI Environments 2026 (under revision)</span><br>
+  <strong>MDPI Environments 2026 (under revision)</strong><br>
   <span class="title">A New Method for Monitoring System for Methane Detection from Plugged and Unplugged Abandoned Wells Using Smart Static Canopies.</span><br>
-  <span class="meta">DOI: 10.20944/preprints202606.0009.v1 (2026)</span>
-  &mdash; <a href="https://doi.org/10.20944/preprints202606.0009.v1">View paper</a>
+  DOI: 10.20944/preprints202606.0009.v1 (2026) &mdash; <a href="https://doi.org/10.20944/preprints202606.0009.v1">View Paper</a>
 </div>
 <div class="pub">
-  <span class="venue">SPE Western Regional Meeting</span><br>
+  <strong>SPE Western Regional Meeting</strong><br>
   <span class="title">AI-Driven Computational Fluid Dynamic Simulations and Experiments to Predict Methane Emission: Applications to Idle and Abandoned Wells (in collaboration with Beyond Limits).</span><br>
-  <span class="meta">SPE-224153-MS (2025)</span>
-  &mdash; <a href="https://doi.org/10.2118/224153-MS">View paper</a>
+  SPE-224153-MS (2025) &mdash; <a href="https://doi.org/10.2118/224153-MS">View Paper</a>
 </div>
 <div class="pub">
-  <span class="venue">SPE Canadian Energy Technology Conference</span><br>
+  <strong>SPE Canadian Energy Technology Conference</strong><br>
   <span class="title">A Method for Detection of Methane Leaks from Idle and Orphaned Wells Using High-Precision Sensor and a Ventilation Canopy (in collaboration with Beyond Limits).</span><br>
-  <span class="meta">SPE-218022-MS (2024)</span>
-  &mdash; <a href="https://doi.org/10.2118/218022-MS">View paper</a>
+  SPE-218022-MS (2024) &mdash; <a href="https://doi.org/10.2118/218022-MS">View Paper</a>
 </div>
 <div class="pub">
-  <span class="venue">SPE Western Regional Meeting</span><br>
+  <strong>SPE Western Regional Meeting</strong><br>
   <span class="title">Monitoring Low and Intermittent Methane Emission from Orphaned and Idle Wells (in collaboration with Beyond Limits).</span><br>
-  <span class="meta">SPE-218839-MS (2024)</span>
-  &mdash; <a href="https://doi.org/10.2118/218839-MS">View paper</a>
+  SPE-218839-MS (2024) &mdash; <a href="https://doi.org/10.2118/218839-MS">View Paper</a>
 </div>
 <div class="pub">
-  <span class="venue">SPE Western Regional Meeting</span><br>
+  <strong>SPE Western Regional Meeting</strong><br>
   <span class="title">The Integrity of Idle and Abandoned Wells in California.</span><br>
-  <span class="meta">SPE-218887-MS (2024)</span>
-  &mdash; <a href="https://doi.org/10.2118/218887-MS">View paper</a>
+  SPE-218887-MS (2024) &mdash; <a href="https://doi.org/10.2118/218887-MS">View Paper</a>
 </div>
 
 <h2>Presentations</h2>
