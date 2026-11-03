@@ -1,209 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nima Daneshvarnejad</title>
-<meta name="description" content="Nima Daneshvarnejad — Ph.D. Petroleum Engineering, USC. Methane emission monitoring, AI-driven modeling, and legacy asset management.">
-<style>
-  body {
-    margin: 40px auto;
-    max-width: 780px;
-    line-height: 1.45;
-    font-size: 17px;
-    color: #000;
-    background: #fff;
-    padding: 0 16px;
-    font-family: "Times New Roman", Times, serif;
-  }
-  a { color: #0000ee; }
-  a:visited { color: #551a8b; }
-  h1 { font-size: 2.1em; margin: 0 0 2px; }
-  .subtitle { font-size: 1.15em; margin: 0 0 6px; }
-  h2 {
-    font-size: 1.3em;
-    margin: 24px 0 8px;
-    padding-bottom: 2px;
-    border-bottom: 1px solid #000;
-  }
-  .photo {
-    float: right;
-    width: 165px;
-    margin: 4px 0 12px 22px;
-    border: 1px solid #000;
-  }
-  .contact { margin: 0 0 10px; }
-  .btns { margin: 0 0 6px; }
-  .btns a {
-    display: inline-block;
-    border: 1px solid #000;
-    padding: 3px 12px;
-    margin: 0 6px 6px 0;
-    text-decoration: none;
-    color: #0000ee;
-  }
-  .btns a:hover { background: #eee; }
-  ul { padding-left: 22px; margin: 8px 0; }
-  li { margin-bottom: 5px; }
-  .pub { margin-bottom: 12px; }
-  .pub .title { font-style: italic; }
-  .two-col { columns: 2; column-gap: 30px; }
-  .two-col li { margin-bottom: 2px; break-inside: avoid; }
-  footer { margin-top: 34px; border-top: 1px solid #000; padding-top: 8px; font-size: 0.85em; color: #333; }
-  @media (max-width: 520px) {
-    .photo { float: none; display: block; width: 150px; margin: 0 0 12px; }
-    .two-col { columns: 1; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nima Daneshvarnejad is an energy and petroleum engineer working on methane detection, AI-assisted CFD, air-quality monitoring, and atmospheric modeling.">
+  <title>Nima Daneshvarnejad · Energy and Environmental Engineering</title>
+  <link rel="stylesheet" href="assets/css/site.css?v=2">
+  <script src="assets/js/site.js?v=2" defer></script>
 </head>
 <body>
+  <div data-site-header></div>
+  <main class="container home-layout">
+    <aside class="profile-card" aria-label="Profile">
+      <img class="profile-photo" src="photo.jpg" alt="Nima Daneshvarnejad at a field site">
+      <h1>Nima Daneshvarnejad</h1>
+      <p class="profile-role">Ph.D. in Energy and Petroleum Engineering<br>University of Southern California</p>
+      <p class="profile-focus">Methane sensing · AI-assisted CFD · atmospheric modeling · legacy wells · air-quality monitoring</p>
+      <div class="badge-list">
+        <a class="badge-link" href="mailto:nimadane95@gmail.com">Email</a>
+        <a class="badge-link" href="https://www.linkedin.com/in/nimadane/">LinkedIn</a>
+        <a class="badge-link" href="https://scholar.google.com/citations?user=mGlNNqAAAAAJ&hl=en">Scholar</a>
+        <a class="badge-link" href="resume.pdf" download>Download CV</a>
+      </div>
+    </aside>
 
-<img class="photo" src="photo.jpg" alt="Nima Daneshvarnejad">
+    <div>
+      <section class="hero-copy">
+        <span class="eyebrow">Research portfolio</span>
+        <h2>Measuring emissions. <span>Modeling what sensors cannot see.</span></h2>
+        <p class="lead">I develop field, computational, and AI-assisted methods for understanding methane and air emissions—from low-rate leaks at legacy wells to regional atmospheric-modeling experiments.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="projects.html">Explore projects</a>
+          <a class="button" href="cv.html">View academic CV</a>
+        </div>
+        <div class="stat-row" aria-label="Research highlights">
+          <div class="stat"><strong>5</strong><span>Peer-reviewed and conference publications</span></div>
+          <div class="stat"><strong>2026</strong><span>Ph.D. in Energy and Petroleum Engineering</span></div>
+          <div class="stat"><strong>Field + AI</strong><span>Sensors, CFD, machine learning, and atmospheric models</span></div>
+        </div>
+      </section>
 
-<h1>Nima Daneshvarnejad</h1>
-<p class="subtitle">Ph.D. Petroleum Engineering &mdash; University of Southern California</p>
+      <section class="section" id="projects">
+        <div class="section-head">
+          <div><span class="eyebrow">Selected work</span><h2>Projects across scales</h2></div>
+          <p>From a sensor inside a static chamber to chemical transport across a regional grid.</p>
+        </div>
+        <div class="project-grid">
+          <a class="project-card" href="projects/methane-detection.html"><span class="project-number">01 · Field systems</span><div><h3>Methane emission detection</h3><p>IoT-enabled static chamber monitoring for plugged and unplugged abandoned wells.</p></div><span class="card-arrow">View project →</span></a>
+          <a class="project-card" href="projects/ai-cfd.html"><span class="project-number">02 · Simulation + AI</span><div><h3>AI-assisted CFD simulation</h3><p>Connecting multiphysics simulations, experiments, and learning models to predict methane behavior.</p></div><span class="card-arrow">View project →</span></a>
+          <a class="project-card" href="projects/measurement-monitoring.html"><span class="project-number">03 · Instrumentation</span><div><h3>Measurement and monitoring</h3><p>High-precision sensing strategies for low and intermittent emission rates.</p></div><span class="card-arrow">View project →</span></a>
+          <a class="project-card" href="projects/co2-measurement.html"><span class="project-number">04 · Industrial emissions</span><div><h3>CO₂ measurement</h3><p>Measurement-method development for steam generators and cogeneration facilities.</p></div><span class="card-arrow">View project →</span></a>
+          <a class="project-card" href="projects/wellfinder.html"><span class="project-number">05 · Data discovery</span><div><h3>Improved WellFinder</h3><p>Locating historical wells and making fragmented regulatory records easier to use.</p></div><span class="card-arrow">View project →</span></a>
+          <a class="project-card" href="projects/air-quality.html"><span class="project-number">06 · Public health data</span><div><h3>Air-quality monitoring</h3><p>Low-cost sensor analysis and forecasting for PM₂.₅, PM₁₀, and VOCs in Kinshasa.</p></div><span class="card-arrow">View project →</span></a>
+          <a class="project-card" href="projects/cmaq-speciate.html"><span class="project-number">07 · Atmospheric chemistry</span><div><h3>CMAQ + SPECIATE</h3><p>A controlled sensitivity study linking source composition to regional PM₂.₅ response.</p></div><span class="card-arrow">View project →</span></a>
+          <a class="project-card" href="projects/plume-modeling.html"><span class="project-number">08 · Dispersion</span><div><h3>Methane plume modeling</h3><p>Inverse dispersion, satellite observations, and learning-based plume interpretation.</p></div><span class="card-arrow">View project →</span></a>
+        </div>
+      </section>
 
-<p class="contact">
-  Phone: (310) 290-6968 &bull;
-  Email: <a href="mailto:nimadane@usc.edu">nimadane@usc.edu</a> &bull;
-  U.S. Citizen
-</p>
+      <section class="section">
+        <div class="section-head"><div><span class="eyebrow">Publications</span><h2>Recent research</h2></div></div>
+        <div class="publication-list">
+          <article class="publication"><strong>Challenges in Designing a New Smart Static Methane Detection and Monitoring Chamber</strong><p><em>Environments</em> 13(7), 411 (2026) · <a href="https://doi.org/10.3390/environments13070411">DOI</a></p></article>
+          <article class="publication"><strong>AI-Driven Computational Fluid Dynamic Simulations and Experiments to Predict Methane Emission</strong><p>SPE Western Regional Meeting (2025) · <a href="https://doi.org/10.2118/224153-MS">SPE-224153-MS</a></p></article>
+          <article class="publication"><strong>Monitoring Low and Intermittent Methane Emission from Orphaned and Idle Wells</strong><p>SPE Western Regional Meeting (2024) · <a href="https://doi.org/10.2118/218839-MS">SPE-218839-MS</a></p></article>
+        </div>
+      </section>
 
-<div class="btns">
-  <a href="https://www.linkedin.com/in/nimadane/">LinkedIn</a>
-  <a href="https://scholar.google.com/citations?user=mGlNNqAAAAAJ&hl=en">Google Scholar</a>
-  <a href="resume.pdf" download>Download Resume (PDF)</a>
-</div>
-
-<h2>Summary</h2>
-<p>
-  Ph.D. with experience in oil and gas risk assessment, management, and energy
-  business model creation. Hands-on expertise in methane emission monitoring, IoT
-  sensor deployment, and computational fluid dynamics modeling for plugged and
-  abandoned wells. Skilled in carbon credit markets, including both voluntary and
-  cap-and-trade frameworks. Experienced in AI-driven time series prediction modeling
-  using Closed-form Continuous-time (CfC) and Liquid Time-Constant (LTC) networks.
-  Seeking to enhance methane emission inventory accuracy, build legacy asset
-  management models, and deliver AI-based solutions for oil and gas legacy assets
-  across the U.S.
-</p>
-
-<h2>Focus Areas</h2>
-<p>
-  Risk assessment, energy assets life cycle analysis, emission monitoring,
-  physically-constrained modeling, computational fluid dynamic modeling, well and
-  legacy assets integrity, airborne emission imaging, machine learning, time series
-  prediction.
-</p>
-
-<h2>Education</h2>
-<ul>
-  <li><strong>University of Southern California</strong>, Los Angeles, CA &mdash; Ph.D. Petroleum Engineering (Chevron Fellowship), April 2026.<br>
-    Research focus: AI-driven methane emission monitoring and reservoir simulations.</li>
-  <li><strong>University of Southern California</strong>, Los Angeles, CA &mdash; M.S. Petroleum Engineering, May 2022.</li>
-  <li><strong>Sharif University of Technology</strong> &mdash; B.S. Petroleum Engineering, June 2018.</li>
-</ul>
-
-<h2>Industry Experience</h2>
-<ul>
-  <li>Developing CO&#8322; emission measuring methods for Berry Corporation steam generators and co-generation plants.</li>
-  <li>Optimized steam and chemical flood processes for Cymric and Midway-Sunset heavy oil fields, enhancing recovery efficiency by 10% (in collaboration with Chevron).</li>
-  <li>Consulted for <a href="https://rmi.org/technical-explainer-orphaned-oil-and-gas-well-carbon-credits/">RMI</a> on the orphaned and abandoned wells explainer for voluntary carbon credit markets.</li>
-  <li>Consulted for the University of Chicago Energy Policy Institute in the Democratic Republic of Congo to set up air quality monitoring infrastructure and build predictive models (awarded by the University of Chicago Energy Policy Institute).</li>
-</ul>
-
-<h2>Publications</h2>
-<div class="pub">
-  <strong>MDPI Environments 2026 (under revision)</strong><br>
-  <span class="title">A New Method for Monitoring System for Methane Detection from Plugged and Unplugged Abandoned Wells Using Smart Static Canopies.</span><br>
-  DOI: 10.20944/preprints202606.0009.v1 (2026) &mdash; <a href="https://doi.org/10.20944/preprints202606.0009.v1">View Paper</a>
-</div>
-<div class="pub">
-  <strong>SPE Western Regional Meeting</strong><br>
-  <span class="title">AI-Driven Computational Fluid Dynamic Simulations and Experiments to Predict Methane Emission: Applications to Idle and Abandoned Wells (in collaboration with Beyond Limits).</span><br>
-  SPE-224153-MS (2025) &mdash; <a href="https://doi.org/10.2118/224153-MS">View Paper</a>
-</div>
-<div class="pub">
-  <strong>SPE Canadian Energy Technology Conference</strong><br>
-  <span class="title">A Method for Detection of Methane Leaks from Idle and Orphaned Wells Using High-Precision Sensor and a Ventilation Canopy (in collaboration with Beyond Limits).</span><br>
-  SPE-218022-MS (2024) &mdash; <a href="https://doi.org/10.2118/218022-MS">View Paper</a>
-</div>
-<div class="pub">
-  <strong>SPE Western Regional Meeting</strong><br>
-  <span class="title">Monitoring Low and Intermittent Methane Emission from Orphaned and Idle Wells (in collaboration with Beyond Limits).</span><br>
-  SPE-218839-MS (2024) &mdash; <a href="https://doi.org/10.2118/218839-MS">View Paper</a>
-</div>
-<div class="pub">
-  <strong>SPE Western Regional Meeting</strong><br>
-  <span class="title">The Integrity of Idle and Abandoned Wells in California.</span><br>
-  SPE-218887-MS (2024) &mdash; <a href="https://doi.org/10.2118/218887-MS">View Paper</a>
-</div>
-
-<h2>Presentations</h2>
-<ul>
-  <li><strong>4th AAPG Orphan, Abandoned, Idle, and Marginal Wells Conference</strong> &mdash;
-    <em>From Leak Rate to Leak Profile: AI-Driven Monitoring and Predictive Modeling of Methane Emissions from Orphaned and Abandoned Wells.</em> Presenter (2026).</li>
-  <li><strong>2nd Annual Orphan, Idle and Marginal Wells California Conference</strong> &mdash;
-    <em>Using Carbon Markets to Scale Monitoring and Remediation of Legacy Wells in California.</em> Presenter and panelist (2026).</li>
-  <li><strong>San Joaquin Well Logging Society</strong> &mdash;
-    <em>Errors in Emission Measurement from Idle and Orphaned Wells.</em> Presenter (2025).</li>
-  <li><strong>3rd AAPG Orphan, Abandoned, Idle, and Marginal Wells Conference</strong> &mdash;
-    <em>Abandoned Wells Methane Emission Monitoring Solutions.</em> Presenter (2025). <em>Working with State and Federal Agencies.</em> Panelist (2025).</li>
-</ul>
-
-<h2>Technical Skills</h2>
-<ul>
-  <li><strong>Computational modeling:</strong> COMSOL Multiphysics (CFD), MATLAB, Latin Hypercube Sampling, multiphase flow simulation.</li>
-  <li><strong>ML / AI:</strong> Python, Liquid Time-Constant Networks, agent-based modeling, Keras, GRU networks, Fourier Neural Operators, time series forecasting, image recognition.</li>
-  <li><strong>Data &amp; tools:</strong> Git, LaTeX, IoT sensor integration, inverse dispersion modeling using satellite emission data processing.</li>
-</ul>
-
-<h2>Research Projects</h2>
-<p><strong>Ph.D. thesis:</strong> &ldquo;Monitoring and Detection of Methane Leaks From Plugged and Abandoned Wells Using MPS Sensors and Ventilation Canopies.&rdquo;</p>
-<ul>
-  <li>Developing Liquid Time-Constant and Fourier Neural Operator machine learning algorithms for time series prediction.</li>
-  <li>Methane emission monitoring design enhancement via machine-learning-assisted multiphase computational fluid dynamic simulation (in collaboration with Beyond Limits).</li>
-  <li>Locating historical wells and regulatory documents analysis.</li>
-  <li>Methane emission satellite data modeling using machine learning.</li>
-</ul>
-
-<h2>Honors &amp; Awards</h2>
-<ul class="two-col">
-  <li>Chevron Master-level scholarship (2020&ndash;2022)</li>
-  <li>USC Viterbi fellowship (2022)</li>
-  <li>ECET fellowship (2023)</li>
-  <li>SPE LA Basin Section Fellowship (2023)</li>
-  <li>SPE LA Basin Section Fellowship (2024)</li>
-  <li>SPE LA Basin Section Fellowship (2025)</li>
-  <li>SPE NA Region Best Ph.D. Student Paper Award (2026)</li>
-  <li>Daneshy Award recipient (2026)</li>
-</ul>
-
-<h2>Leadership</h2>
-<ul>
-  <li><strong>USC SPE Student Chapter President</strong> (2021&ndash;2022) &mdash; collaborated with energy scholars; managed SPE events, talks, monthly newsletter, and field trips.</li>
-  <li><strong>USC SPE Student Chapter Vice President</strong> (2022&ndash;2024) &mdash; managed the chapter's relationship with the SPE LA Basin Section.</li>
-  <li><strong>SPE LA Basin Section Young Professionals Program Officer</strong> (2022&ndash;2024) &mdash; organized events for early-career industry professionals.</li>
-  <li><strong>Persian Academic and Cultural Student Association</strong> (2021&ndash;2024) &mdash; promoted Persian art and culture within the USC community.</li>
-</ul>
-
-<h2>Professional Societies</h2>
-<ul>
-  <li>Society of Petroleum Engineers (SPE) &mdash; member since 2013.</li>
-  <li>American Geophysical Union (AGU) &mdash; member since 2023.</li>
-  <li>American Association of Petroleum Geologists (AAPG) &mdash; member since 2025.</li>
-</ul>
-
-<h2>References</h2>
-<ul>
-  <li>Dr. Iraj Ershaghi (USC) &mdash; <a href="mailto:ershaghi@usc.edu">ershaghi@usc.edu</a></li>
-  <li>Dr. Donald Paul (USC) &mdash; <a href="mailto:donaldpa@usc.edu">donaldpa@usc.edu</a></li>
-  <li>Dr. Rajiv Kalia (USC) &mdash; <a href="mailto:rkalia@usc.edu">rkalia@usc.edu</a></li>
-</ul>
-
-<footer>
-  Last updated: July 2026.
-</footer>
-
+      <section class="section">
+        <div class="section-head"><div><span class="eyebrow">Recognition</span><h2>Research and service</h2></div></div>
+        <div class="project-grid three">
+          <div class="project-card"><span class="project-number">2026</span><div><h3>SPE International Student Paper Contest</h3><p>Second place, Ph.D. division.</p></div></div>
+          <div class="project-card"><span class="project-number">2026</span><div><h3>Best Doctoral Student Paper</h3><p>Society of Petroleum Engineers, Western Regional.</p></div></div>
+          <div class="project-card"><span class="project-number">2025</span><div><h3>Best Research Assistant Student</h3><p>USC Viterbi School of Engineering.</p></div></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div data-site-footer></div>
 </body>
 </html>
