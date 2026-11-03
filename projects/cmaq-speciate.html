@@ -1,23 +1,46 @@
 <!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CMAQ and SPECIATE sensitivity study of how fine-particle source composition changes modeled aerosol components and total PM2.5.">
-  <title>CMAQ + SPECIATE · Nima Daneshvarnejad</title>
-  <link rel="stylesheet" href="../assets/css/site.css?v=2"><script src="../assets/js/site.js?v=2" defer></script>
+  <meta name="description" content="CMAQ and SPECIATE fine-particle composition sensitivity study by Nima Daneshvarnejad.">
+  <title>CMAQ + SPECIATE — Nima Daneshvarnejad</title>
+  <link rel="stylesheet" href="../styles.css">
 </head><body>
-  <div data-site-header></div><main>
-    <header class="container page-hero"><span class="project-kicker">07 · Atmospheric chemistry</span><h1>CMAQ + <span>SPECIATE</span></h1><p class="lead">A controlled modeling experiment asking how a change in emitted fine-particle composition alters atmospheric aerosol composition when total emitted mass stays constant.</p></header>
-    <div class="container project-layout">
-      <article>
-        <section class="content-section"><h2>The question</h2><p>If PT_EGU fine-particle emissions keep the same source-by-source and hour-by-hour mass but use the EPA SPECIATE profile for gas-fired combined-cycle and cogeneration plants, how does CMAQ's predicted aerosol composition change?</p></section>
-        <section class="content-section"><h2>Modeling system</h2><p>I compiled and ran CMAQ v5.5 with the CRACMM2 chemical mechanism and STAGE deposition on a 12 km Northeast U.S. domain. The benchmark and experiment each covered 24 hours on a 100 × 105 grid with 35 vertical layers.</p><div class="stat-row"><div class="stat"><strong>378,857.65</strong><span>kg/day fine PM preserved</span></div><div class="stat"><strong>8,179</strong><span>PT_EGU source records per hour</span></div><div class="stat"><strong>24</strong><span>hourly model records</span></div></div></section>
-        <section class="content-section"><h2>Matched sensitivity design</h2><div class="process"><div class="process-item"><strong>Run the benchmark</strong><span>Establish the original EPA simulation and verify its inputs and outputs.</span></div><div class="process-item"><strong>Translate the profile</strong><span>Map a SPECIATE/S2S chemical recipe into CMAQ emissions variables.</span></div><div class="process-item"><strong>Preserve emitted mass</strong><span>Redistribute fine-particle composition for every source and hour while retaining timing, location, stack information, and total fine-PM mass.</span></div><div class="process-item"><strong>Compare matched runs</strong><span>Hold meteorology, boundary conditions, model setup, and all other emissions constant.</span></div></div></section>
-        <section class="content-section"><h2>Results</h2><p>The five selected primary-organic aerosol groups increased by approximately 20.23% in the combined domain-and-hour mean. CMAQ's total PM₂.₅ diagnostic changed by only −0.026%. The experiment therefore changed chemical composition substantially while leaving domain-average total fine-particle concentration essentially unchanged.</p><p>Local daily-average changes were larger than the domain mean, ranging from a 0.1331 µg/m³ decrease to a 0.0188 µg/m³ increase. This is why the interpretation combines chemical, temporal, and spatial diagnostics.</p></section>
-        <section class="content-section"><h2>Figures</h2><div class="figure-grid"><figure class="figure"><img src="../assets/images/cmaq-spatial-change.png" alt="Baseline, sensitivity, and difference maps of modeled PM2.5"><figcaption>Baseline, sensitivity experiment, and experiment-minus-baseline total PM₂.₅.</figcaption></figure><figure class="figure"><img src="../assets/images/cmaq-hourly-change.png" alt="Hourly total PM2.5 response in the CMAQ sensitivity experiment"><figcaption>Hourly domain-average total PM₂.₅ and the experiment-minus-baseline difference.</figcaption></figure></div></section>
-        <section class="content-section"><h2>Scientific interpretation</h2><ul><li>A large relative change in a small chemical component does not necessarily create a large change in the total.</li><li>Preserving emitted mass does not guarantee identical atmospheric concentrations because species behave differently after release.</li><li>Domain averages can hide localized positive and negative responses.</li></ul></section>
-      </article>
-      <aside class="project-aside"><div class="aside-card"><h2>Configuration</h2><dl><dt>Model</dt><dd>CMAQ v5.5</dd><dt>Chemistry</dt><dd>CRACMM2</dd><dt>Deposition</dt><dd>STAGE</dd><dt>Domain</dt><dd>2018_12NE3</dd><dt>Date</dt><dd>July 1, 2018</dd></dl></div><div class="aside-card"><h2>Tools</h2><div class="tag-list"><span class="tag">CMAQ</span><span class="tag">SPECIATE</span><span class="tag">NetCDF</span><span class="tag">OpenMPI</span><span class="tag">Linux</span><span class="tag">AWS EC2</span></div></div><div class="aside-card"><a class="button" href="../projects.html">← All projects</a></div></aside>
-    </div>
-  </main><div data-site-footer></div>
+  <nav><a href="../index.html">Home</a><a href="../projects.html">Projects</a><a href="../cv.html">CV</a><a href="mailto:nimadane95@gmail.com">Contact</a></nav>
+  <h1>CMAQ + SPECIATE</h1>
+  <p class="subtitle">Fine-particle composition sensitivity study using CMAQ v5.5.</p>
+
+  <h2>Research Question</h2>
+  <p>If PT_EGU fine-particle emissions keep the same source-by-source and hour-by-hour mass but use the EPA SPECIATE profile for gas-fired combined-cycle and cogeneration plants, how does CMAQ's predicted aerosol composition change?</p>
+
+  <h2>Model Configuration</h2>
+  <table class="details">
+    <tr><th>Model</th><td>CMAQ v5.5</td></tr>
+    <tr><th>Chemistry</th><td>CRACMM2</td></tr>
+    <tr><th>Deposition</th><td>STAGE</td></tr>
+    <tr><th>Domain</th><td>2018_12NE3, 100 × 105 cells at 12 km resolution</td></tr>
+    <tr><th>Simulation</th><td>July 1, 2018; 24 hourly records; 35 vertical layers</td></tr>
+    <tr><th>Computing</th><td>Linux, OpenMPI, NetCDF, and AWS EC2</td></tr>
+  </table>
+
+  <h2>Method</h2>
+  <ol>
+    <li>Run and verify the original EPA benchmark.</li>
+    <li>Translate a SPECIATE/S2S source profile into CMAQ emissions variables.</li>
+    <li>Redistribute fine-particle composition for every source and hour while preserving total mass, timing, location, and stack information.</li>
+    <li>Run a matched sensitivity simulation and compare chemical, temporal, and spatial response.</li>
+  </ol>
+
+  <h2>Results</h2>
+  <p>The five selected primary-organic aerosol groups increased by approximately 20.23% in the combined domain-and-hour mean. CMAQ's total PM₂.₅ diagnostic changed by only −0.026%. Chemical composition changed substantially while domain-average total fine-particle concentration remained essentially unchanged.</p>
+
+  <div class="figure-row">
+    <figure><img src="../assets/images/cmaq-spatial-change.png" alt="Baseline, sensitivity, and difference maps of total PM2.5"><figcaption>Baseline, sensitivity experiment, and experiment-minus-baseline total PM₂.₅.</figcaption></figure>
+    <figure><img src="../assets/images/cmaq-hourly-change.png" alt="Hourly total PM2.5 response"><figcaption>Hourly domain-average total PM₂.₅ and the experiment-minus-baseline difference.</figcaption></figure>
+  </div>
+
+  <h2>Interpretation</h2>
+  <ul><li>A large relative change in a small component does not necessarily produce a large change in the total.</li><li>Preserving emitted mass does not guarantee identical atmospheric concentrations.</li><li>Domain averages can hide localized positive and negative responses.</li></ul>
+  <p class="back-link"><a href="../projects.html">← Back to all projects</a></p>
+  <footer><a href="../index.html">Home</a> · <a href="../cv.html">CV</a></footer>
 </body></html>
 
