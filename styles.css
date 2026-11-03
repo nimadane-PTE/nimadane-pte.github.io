@@ -1,0 +1,113 @@
+body {
+  margin: 40px auto;
+  max-width: 1180px;
+  padding: 0 22px;
+  color: #000;
+  background: #fff;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+a { color: #0000ee; }
+a:visited { color: #551a8b; }
+
+nav {
+  margin-bottom: 34px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000;
+  font-size: 1.05em;
+}
+
+nav a { margin-right: 14px; }
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 2.7em;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 0 0 8px;
+  font-size: 1.25em;
+}
+
+.contact { margin: 0 0 14px; }
+
+h2 {
+  margin: 34px 0 14px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #000;
+  font-size: 1.45em;
+}
+
+h3 { margin: 24px 0 6px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 28px; }
+li { margin-bottom: 8px; }
+
+.photo {
+  float: right;
+  width: 220px;
+  margin: 0 0 20px 34px;
+  border: 1px solid #000;
+}
+
+.buttons { margin: 16px 0 24px; }
+.buttons a {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  padding: 7px 14px;
+  border: 1px solid #000;
+  color: #0000ee;
+  text-decoration: none;
+}
+.buttons a:hover { background: #eee; }
+
+.project-list li { margin-bottom: 16px; }
+.project-list strong { font-size: 1.08em; }
+
+.details {
+  width: 100%;
+  max-width: 760px;
+  border-collapse: collapse;
+}
+.details th,
+.details td {
+  padding: 8px 10px;
+  border: 1px solid #999;
+  text-align: left;
+  vertical-align: top;
+}
+.details th { width: 170px; }
+
+.publication { margin-bottom: 18px; }
+.publication-title { font-style: italic; }
+
+.figure-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+figure { margin: 10px 0 22px; }
+figure img { width: 100%; border: 1px solid #000; }
+figcaption { margin-top: 6px; font-size: 0.9em; }
+
+.back-link { margin-top: 36px; }
+
+footer {
+  clear: both;
+  margin-top: 44px;
+  padding-top: 10px;
+  border-top: 1px solid #000;
+  font-size: 0.88em;
+}
+
+@media (max-width: 700px) {
+  body { margin-top: 22px; font-size: 17px; }
+  h1 { font-size: 2.1em; }
+  .photo { float: none; width: 180px; margin: 0 0 18px; }
+  .figure-row { grid-template-columns: 1fr; }
+  nav a { display: inline-block; margin-bottom: 6px; }
+}
+
