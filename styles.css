@@ -103,6 +103,16 @@ figcaption { margin-top: 6px; font-size: 0.9em; }
   background: #fff;
 }
 
+.natural-size-figure {
+  max-width: 100%;
+}
+
+.natural-size-figure img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .back-link { margin-top: 36px; }
 
 footer {
