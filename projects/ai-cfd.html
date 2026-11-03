@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI-assisted computational fluid dynamics for predicting methane emissions from idle and abandoned wells.">
+  <title>AI-Assisted CFD Simulation · Nima Daneshvarnejad</title>
+  <link rel="stylesheet" href="../assets/css/site.css?v=2"><script src="../assets/js/site.js?v=2" defer></script>
+</head><body>
+  <div data-site-header></div><main>
+    <header class="container page-hero"><span class="project-kicker">02 · Simulation + AI</span><h1>AI-assisted <span>CFD simulation</span></h1><p class="lead">Using computational fluid dynamics, experiments, and learning models to predict how methane moves through a monitoring chamber.</p></header>
+    <div class="container"><div class="visual-placeholder"><span>Simulation image placeholder<br>Velocity and concentration field</span></div></div>
+    <div class="container project-layout">
+      <article>
+        <section class="content-section"><h2>Why simulation matters</h2><p>A methane sensor measures concentration at one location. The quantity of interest—the leak rate—depends on how gas enters, mixes, accumulates, and leaves the chamber. Computational fluid dynamics makes those hidden transport processes visible.</p><p>The research uses COMSOL Multiphysics for laminar and turbulent flow and transport of concentrated species, with LiveLink for MATLAB supporting analysis and workflow development.</p></section>
+        <section class="content-section"><h2>Hybrid workflow</h2><div class="process"><div class="process-item"><strong>Build the physical model</strong><span>Represent chamber geometry, ventilation, methane transport, and sensor locations.</span></div><div class="process-item"><strong>Compare with experiments</strong><span>Use controlled measurements to evaluate the simulated concentration response.</span></div><div class="process-item"><strong>Generate training information</strong><span>Explore combinations of flow, geometry, and source conditions that are difficult to test one at a time.</span></div><div class="process-item"><strong>Learn the dynamics</strong><span>Develop time-series and operator-learning models for faster prediction and design exploration.</span></div></div></section>
+        <section class="content-section"><h2>AI methods</h2><p>The broader research program includes Liquid Time-Constant networks, Fourier neural operators, physics-informed neural networks, Keras, TensorFlow, and PyTorch. The aim is to make prediction faster while retaining a defensible connection to physical behavior.</p></section>
+        <section class="content-section"><h2>Related publication</h2><div class="publication"><strong>AI-Driven Computational Fluid Dynamic Simulations and Experiments to Predict Methane Emission: Applications to Idle and Abandoned Wells</strong><p>SPE Western Regional Meeting (2025), in collaboration with Beyond Limits · <a href="https://doi.org/10.2118/224153-MS">View paper</a></p></div></section>
+      </article>
+      <aside class="project-aside"><div class="aside-card"><h2>Project details</h2><dl><dt>Domain</dt><dd>Methane transport and chamber design</dd><dt>Modeling</dt><dd>COMSOL Multiphysics</dd><dt>Analysis</dt><dd>MATLAB and Python</dd><dt>Collaboration</dt><dd>Beyond Limits</dd></dl></div><div class="aside-card"><h2>Methods</h2><div class="tag-list"><span class="tag">CFD</span><span class="tag">COMSOL</span><span class="tag">LTC networks</span><span class="tag">FNO</span><span class="tag">Physics-informed ML</span></div></div><div class="aside-card"><a class="button" href="../projects.html">← All projects</a></div></aside>
+    </div>
+  </main><div data-site-footer></div>
+</body></html>
+
