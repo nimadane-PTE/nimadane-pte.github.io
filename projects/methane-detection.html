@@ -8,21 +8,57 @@
   <nav><a href="../index.html">Home</a><a href="../projects.html">Projects</a><a href="../cv.html">CV</a><a href="mailto:nimadane95@gmail.com">Contact</a></nav>
   <h1>Methane Emission Detection</h1>
   <p class="subtitle">IoT-enabled static chamber monitoring for plugged and unplugged abandoned wells.</p>
-  <!-- Add a project image here later: <img src="../assets/images/methane-detection.jpg" alt="Methane chamber field deployment"> -->
 
   <h2>Overview</h2>
-  <p>This doctoral research develops a static flux chamber system for detecting and monitoring methane emissions from legacy wells. The work combines chamber design, high-precision sensors, IoT data acquisition, experiments, and physical modeling.</p>
+  <p>This project has shaped my Ph.D. thesis. I first became interested in the problem after visiting several oilfields in the Los Angeles area and observing how orphaned and abandoned wells can develop integrity problems over time. Failures in well barriers can allow methane, crude oil, and other gases to escape to the surface or migrate into surrounding soil and groundwater. In addition to contributing to global warming, these leaks can create risks of explosions, fires, and the release of toxic substances into nearby communities.</p>
+
+  <figure class="project-figure">
+    <img src="../assets/images/methane-monitoring-network.png" alt="Conceptual network of IoT-enabled methane monitoring chambers around an industrial facility">
+    <figcaption>Concept for a network of IoT-enabled monitoring chambers that provides continuous local measurements without relying solely on satellite or aircraft surveys.</figcaption>
+  </figure>
 
   <h2>Research Problem</h2>
-  <p>Low-rate and intermittent emissions are difficult to characterize with short field visits. A monitoring system must contain and mix emitted gas, maintain reliable sensor conditions, and connect time-varying concentration measurements to the underlying leak behavior.</p>
+  <p>Low-rate and intermittent emissions are difficult to detect because wind can rapidly dilute methane, and short field visits may miss episodic leaks. An effective monitoring system must contain and mix the emitted gas, maintain reliable sensing conditions, and connect time-varying concentration measurements to the severity of well-integrity problems.</p>
 
   <h2>System Components</h2>
   <ol>
-    <li>A static or ventilated canopy encloses the wellhead.</li>
-    <li>High-precision sensors measure methane concentration.</li>
-    <li>IoT-enabled acquisition supports continuous monitoring.</li>
-    <li>Experiments and models connect concentration changes to emissions.</li>
+    <li>A static or ventilated canopy installed around the wellhead.</li>
+    <li>Reliable methane sensors with low detection limits.</li>
+    <li>An IoT-enabled system that supports continuous, unattended monitoring.</li>
+    <li>Experiments and physical models that relate changes in measured concentration to emission behavior and estimated leak rates.</li>
   </ol>
+
+  <h2>Experimental Workflow</h2>
+  <p>The monitoring system was first evaluated under controlled conditions using methane canisters and regulated flow lines to simulate leaking wells. Wind speed, wind direction, and methane concentration were recorded and analyzed. The experimental setup was then modified iteratively, resulting in an optimized ventilation canopy designed to limit air mixing, improve signal consistency, and reduce methane washout.</p>
+
+  <figure class="project-figure">
+    <img src="../assets/images/ventilation-canopy-workflow.png" alt="Experimental workflow for optimizing a ventilated methane monitoring canopy" loading="lazy">
+    <figcaption>Controlled testing and iterative modification of the ventilation canopy before field deployment.</figcaption>
+  </figure>
+
+  <h2>Field Testing</h2>
+  <p>After the canopy was optimized, the monitoring system was deployed at an abandoned well. The field setup combined the canopy and methane sensor with a separate wind sensor so that changes in methane concentration could be interpreted together with changing wind conditions.</p>
+
+  <figure class="project-figure">
+    <img src="../assets/images/abandoned-well-field-setup.png" alt="Methane monitoring canopy and wind sensor deployed at an abandoned well field site" loading="lazy">
+    <figcaption>Field-testing setup at an abandoned well, including the optimized monitoring canopy and wind sensor.</figcaption>
+  </figure>
+
+  <h2>Field Measurements</h2>
+  <p>During field testing, the system recorded methane concentration together with wind speed and direction. These measurements provided the information needed to examine signal consistency, methane washout, and the response of the optimized canopy under changing field conditions.</p>
+
+  <figure class="project-figure">
+    <img src="../assets/images/wind-methane-time-series.png" alt="Time series comparing methane concentration with wind speed after canopy optimization" loading="lazy">
+    <figcaption>Example time series of methane concentration and wind speed after canopy optimization.</figcaption>
+  </figure>
+
+  <h2>Time-Series Prediction</h2>
+  <p>Recorded field measurements form a dataset of methane leak events. These data can be used as input to a Liquid Time-Constant network that learns the temporal behavior of the signal and predicts the timing and intensity of future leak events.</p>
+
+  <figure class="project-figure">
+    <img src="../assets/images/ltc-prediction-workflow.png" alt="Workflow connecting abandoned-well field measurements to a Liquid Time-Constant prediction model" loading="lazy">
+    <figcaption>Workflow linking field measurements to a Liquid Time-Constant model for predicting future methane leak events and their intensity.</figcaption>
+  </figure>
 
   <h2>Related Publications</h2>
   <ul>

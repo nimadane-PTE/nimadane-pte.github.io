@@ -93,6 +93,16 @@ figure { margin: 10px 0 22px; }
 figure img { width: 100%; border: 1px solid #000; }
 figcaption { margin-top: 6px; font-size: 0.9em; }
 
+.project-figure {
+  max-width: 1050px;
+  margin: 24px auto 34px;
+}
+
+.project-figure img {
+  height: auto;
+  background: #fff;
+}
+
 .back-link { margin-top: 36px; }
 
 footer {
