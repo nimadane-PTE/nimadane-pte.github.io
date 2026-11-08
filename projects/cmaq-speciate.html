@@ -7,39 +7,66 @@
 </head><body>
   <nav><a href="../index.html">Home</a><a href="../projects.html">Projects</a><a href="../cv.html">CV</a><a href="mailto:nimadane95@gmail.com">Contact</a></nav>
   <h1>CMAQ + SPECIATE</h1>
-  <p class="subtitle">Fine-particle composition sensitivity study using CMAQ v5.5.</p>
+  <p class="subtitle">Fine-particle composition sensitivity analysis using EPA SPECIATE, S2S, and CMAQ v5.5.</p>
+
+  <h2>Project Overview</h2>
+  <p>This project was designed to develop an end-to-end understanding of the EPA SPECIATE database and the Community Multiscale Air Quality (CMAQ) modeling workflow. I selected the SPECIATE profile for gas-fired combined-cycle and cogeneration plants, converted it into CMAQ-compatible model species with the Species-to-Species (S2S) Tool, configured CMAQ v5.5 on an AWS EC2 instance, and conducted a controlled chemical-composition sensitivity experiment.</p>
 
   <h2>Research Question</h2>
-  <p>If PT_EGU fine-particle emissions keep the same source-by-source and hour-by-hour mass but use the EPA SPECIATE profile for gas-fired combined-cycle and cogeneration plants, how does CMAQ's predicted aerosol composition change?</p>
+  <p>If PT_EGU fine-particle emissions retain the same source-by-source and hour-by-hour mass but use the EPA SPECIATE profile for gas-fired combined-cycle and cogeneration plants, how does CMAQ's predicted aerosol composition change?</p>
+
+  <h2>Workflow</h2>
+  <ol>
+    <li>Review SPECIATE and CMAQ documentation, terminology, tutorials, and benchmark workflows.</li>
+    <li>Select SPECIATE v5.4 profile 5671 for gas-fired combined-cycle and cogeneration plants.</li>
+    <li>Use the S2S Tool and PM-CR2 mapping rules to translate the measured profile into 19 CMAQ-compatible CRACMM2 particulate species.</li>
+    <li>Compile and run the CMAQ v5.5 EPA benchmark in a Linux environment on AWS EC2.</li>
+    <li>Apply the new composition to all PT_EGU fine-particle records and compare the matched experiment with the original benchmark.</li>
+  </ol>
 
   <h2>Model Configuration</h2>
   <table class="details">
     <tr><th>Model</th><td>CMAQ v5.5</td></tr>
+    <tr><th>Emissions profile</th><td>EPA SPECIATE v5.4, profile 5671</td></tr>
+    <tr><th>Profile processing</th><td>S2S Tool with PM-CR2 mapping rules</td></tr>
     <tr><th>Chemistry</th><td>CRACMM2</td></tr>
     <tr><th>Deposition</th><td>STAGE</td></tr>
     <tr><th>Domain</th><td>2018_12NE3, 100 × 105 cells at 12 km resolution</td></tr>
     <tr><th>Simulation</th><td>July 1, 2018; 24 hourly records; 35 vertical layers</td></tr>
-    <tr><th>Computing</th><td>Linux, OpenMPI, NetCDF, and AWS EC2</td></tr>
+    <tr><th>Computing</th><td>Ubuntu Linux, OpenMPI, NetCDF, I/O API, and AWS EC2</td></tr>
   </table>
 
-  <h2>Method</h2>
-  <ol>
-    <li>Run and verify the original EPA benchmark.</li>
-    <li>Translate a SPECIATE/S2S source profile into CMAQ emissions variables.</li>
-    <li>Redistribute fine-particle composition for every source and hour while preserving total mass, timing, location, and stack information.</li>
-    <li>Run a matched sensitivity simulation and compare chemical, temporal, and spatial response.</li>
-  </ol>
+  <h2>Controlled Composition Experiment</h2>
+  <p>The experiment changed only the chemical composition of PT_EGU fine-particle emissions. Total fine-particle mass, hourly emission patterns, source locations, stack information, meteorology, land-surface data, and initial and boundary conditions were held constant. Both inventories contained approximately 378.9 metric tonnes per day of fine-particle emissions; coarse-particle emissions were not modified.</p>
 
-  <h2>Results</h2>
-  <p>The five selected primary-organic aerosol groups increased by approximately 20.23% in the combined domain-and-hour mean. CMAQ's total PM₂.₅ diagnostic changed by only −0.026%. Chemical composition changed substantially while domain-average total fine-particle concentration remained essentially unchanged.</p>
+  <figure class="project-figure natural-size-figure" style="width: 936px; max-width: 100%;">
+    <img src="../assets/images/cmaq-pt-egu-emissions-composition.png" alt="Stacked bars comparing the chemical composition of PT_EGU fine-particle emissions in the EPA benchmark and the gas-fired composition experiment" style="width: 936px; max-width: 100%; height: auto;">
+    <figcaption>The total PT_EGU fine-particle emission mass remained approximately 378.9 metric tonnes per day, while its chemical composition was redistributed using the gas-fired combined-cycle and cogeneration profile.</figcaption>
+  </figure>
 
-  <div class="figure-row">
-    <figure><img src="../assets/images/cmaq-spatial-change.png" alt="Baseline, sensitivity, and difference maps of total PM2.5"><figcaption>Baseline, sensitivity experiment, and experiment-minus-baseline total PM₂.₅.</figcaption></figure>
-    <figure><img src="../assets/images/cmaq-hourly-change.png" alt="Hourly total PM2.5 response"><figcaption>Hourly domain-average total PM₂.₅ and the experiment-minus-baseline difference.</figcaption></figure>
-  </div>
+  <h2>Total PM₂.₅ Response</h2>
+  <p>Domain-average total PM₂.₅ remained essentially unchanged, but individual grid cells showed small spatial responses to the revised composition. Daily-average experiment-minus-baseline differences ranged from approximately −0.133 to +0.019 µg/m³, demonstrating that mass-preserving emissions changes can still alter modeled atmospheric concentrations locally.</p>
 
-  <h2>Interpretation</h2>
-  <ul><li>A large relative change in a small component does not necessarily produce a large change in the total.</li><li>Preserving emitted mass does not guarantee identical atmospheric concentrations.</li><li>Domain averages can hide localized positive and negative responses.</li></ul>
+  <figure class="project-figure natural-size-figure" style="width: 936px; max-width: 100%;">
+    <img src="../assets/images/cmaq-total-pm25-spatial-response.png" alt="Maps comparing baseline and experimental total surface PM2.5 with their spatial difference" style="width: 936px; max-width: 100%; height: auto;">
+    <figcaption>Daily-average total surface PM₂.₅ for the original benchmark, the composition experiment, and the experiment-minus-baseline difference on July 1, 2018.</figcaption>
+  </figure>
+
+  <h2>Organic-Aerosol Response</h2>
+  <p>The five selected primary-organic aerosol groups increased by approximately 20% in the combined domain-and-hour mean. Their spatial response was much more visible than the change in total PM₂.₅ because the experiment directly redistributed the emitted fine-particle composition toward these organic groups.</p>
+
+  <figure class="project-figure natural-size-figure" style="width: 936px; max-width: 100%;">
+    <img src="../assets/images/cmaq-organic-aerosol-spatial-response.png" alt="Maps comparing baseline and experimental selected organic-aerosol concentrations with their spatial difference" style="width: 936px; max-width: 100%; height: auto;">
+    <figcaption>Daily-average surface concentrations of the five selected organic-aerosol groups for the baseline, composition experiment, and experiment-minus-baseline difference.</figcaption>
+  </figure>
+
+  <h2>Key Interpretation</h2>
+  <ul>
+    <li>Changing emissions composition can alter aerosol species and grid-cell concentrations even when total emitted mass is unchanged.</li>
+    <li>A large relative change in a smaller chemical component does not necessarily produce a large change in total PM₂.₅.</li>
+    <li>Domain averages can hide localized positive and negative responses.</li>
+    <li>The workflow provides a foundation for developing more targeted CMAQ and SPECIATE sensitivity studies.</li>
+  </ul>
   <p class="back-link"><a href="../projects.html">← Back to all projects</a></p>
   <footer><a href="../index.html">Home</a> · <a href="../cv.html">CV</a></footer>
 </body></html>
