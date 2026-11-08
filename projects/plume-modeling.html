@@ -1,33 +1,51 @@
 <!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Methane plume modeling research by Nima Daneshvarnejad.">
+  <meta name="description" content="Methane plume modeling research using Carbon Mapper imagery, spatial features, and machine learning by Nima Daneshvarnejad.">
   <title>Methane Emission Plume Modeling — Nima Daneshvarnejad</title>
   <link rel="stylesheet" href="../styles.css">
 </head><body>
   <nav><a href="../index.html">Home</a><a href="../projects.html">Projects</a><a href="../cv.html">CV</a><a href="mailto:nimadane95@gmail.com">Contact</a></nav>
   <h1>Methane Emission Plume Modeling</h1>
-  <p class="subtitle">Dispersion models, satellite observations, and machine learning.</p>
-  <!-- Add a project image here later: <img src="../assets/images/plume-modeling.jpg" alt="Methane plume model"> -->
+  <p class="subtitle">Carbon Mapper methane imagery, plume-shape features, and machine-learning emission estimates.</p>
 
   <h2>Overview</h2>
-  <p>A methane plume is shaped by both its source and the atmosphere. Wind, turbulence, boundary-layer conditions, terrain, sensor geometry, and retrieval uncertainty affect the observed pattern. Plume modeling connects an atmospheric enhancement to a possible emission estimate.</p>
+  <p>Remote-sensing images of methane plumes contain information about both concentration enhancement and plume geometry. This project investigated whether image-derived features could be used to estimate reported methane emission rates and whether spatial structure provided information beyond the concentration distribution alone. The analysis used Carbon Mapper concentration rasters from Southern California landfill sites and retained 363 usable plumes from 423 available records.</p>
 
-  <h2>Modeling Framework</h2>
+  <h2>Research Question</h2>
+  <p>Two plume images can have the same concentration distribution while arranging those concentrations differently in space. To separate these effects, the observed pixel pattern was compared with a shuffled control that preserved the same pixel values but changed their spatial arrangement.</p>
+  <figure class="project-figure natural-size-figure" style="width: 1509px; max-width: 100%;">
+    <img src="../assets/images/plume-spatial-structure-question.png" alt="Observed methane plume, shuffled spatial control, and their identical concentration distributions" style="width: 1509px; max-width: 100%; height: auto;">
+    <figcaption>Observed plume, shuffled spatial control, and cumulative concentration distributions. Shuffling provides a diagnostic comparison rather than a physical plume simulation.</figcaption>
+  </figure>
+
+  <h2>Data and Processing</h2>
   <ol>
-    <li>Process methane imagery or concentration data together with location, time, and quality information.</li>
-    <li>Use available meteorology and a dispersion representation appropriate to the scale.</li>
-    <li>Apply inverse modeling to test which source strengths are consistent with the observed plume.</li>
-    <li>Evaluate sensitivity to wind, background concentration, plume boundaries, and model assumptions.</li>
+    <li>Query the Carbon Mapper catalog and download methane concentration rasters with their associated plume metadata.</li>
+    <li>Identify the largest valid enhancement region and retain the native pixel field for feature extraction.</li>
+    <li>Calculate concentration-distribution statistics, physical plume dimensions, and fractal and multiscale descriptors.</li>
+    <li>Prepare normalized plume grids and validity masks for neural-network models.</li>
+    <li>Evaluate performance using held-out sites and acquisition groups so that results are not dominated by repeated observations from the same location.</li>
   </ol>
 
-  <h2>Tools</h2>
-  <p>AERMOD, inverse dispersion modeling, satellite emission-data processing, ArcGIS, Python, and machine learning.</p>
+  <h2>Features Investigated</h2>
+  <p>The feature analysis included concentration statistics and quantiles, physical plume area, width, and height, and fractal and multiscale descriptors such as information dimension, correlation dimension, lacunarity, and boundary scaling. Scaling relationships, pixel rearrangement, segmentation thresholds, and the number of available spatial scales were examined before the features were used in the predictive comparison.</p>
+  <figure class="project-figure natural-size-figure" style="width: 1558px; max-width: 100%;">
+    <img src="../assets/images/plume-fractal-diagnostics.png" alt="Fractal and multiscale diagnostic plots for methane plume imagery" style="width: 1558px; max-width: 100%; height: auto;">
+    <figcaption>Fractal and multiscale diagnostics used to examine scaling behavior, sensitivity to pixel arrangement and segmentation thresholds, and the number of fitted spatial scales.</figcaption>
+  </figure>
 
-  <h2>Next Step</h2>
-  <p>Add a documented plume case study with observation data, meteorological inputs, model setup, inversion method, and uncertainty results.</p>
+  <h2>Modeling and Findings</h2>
+  <p>Random-forest feature ablations were compared with feed-forward, convolutional, recurrent, liquid time-constant, and Fourier neural operators. Concentration-distribution features performed better than the median baseline. Adding physical plume size produced the largest improvement, reducing the group-balanced mean absolute log error from approximately 0.700 to 0.491 and increasing the pooled log-scale R² from 0.077 to approximately 0.508. Fractal features were also investigated as additional spatial descriptors. Overall, plume size and concentration distribution were the most helpful image-derived predictors of reported emission rate.</p>
+  <figure class="project-figure natural-size-figure" style="width: 1618px; max-width: 100%;">
+    <img src="../assets/images/plume-model-comparison.png" alt="Held-out methane emission prediction results across feature sets and machine-learning models" style="width: 1618px; max-width: 100%; height: auto;">
+    <figcaption>Held-out group comparison across engineered feature sets and learned spatial representations. Dots represent held-out groups, and bars show equal-group mean errors.</figcaption>
+  </figure>
 
-  <table class="details"><tr><th>Pollutant</th><td>Methane</td></tr><tr><th>Scale</th><td>Facility to regional</td></tr><tr><th>Inputs</th><td>Remote observations and meteorology</td></tr><tr><th>Methods</th><td>Inverse dispersion, satellite data, GIS, and machine learning</td></tr></table>
+  <h2>Interpretation</h2>
+  <p>The results show that methane imagery contains useful emission-rate information even without meteorological inputs. The distribution of concentration enhancements provides an initial signal, while physical plume size adds substantial predictive value. Fractal and multiscale features provide a structured way to investigate plume complexity and spatial organization. This is an exploratory, fixed-budget comparison based on reported emission estimates rather than independent controlled-release measurements, so the findings are best interpreted as a foundation for further validation.</p>
+
+  <table class="details"><tr><th>Data source</th><td>Carbon Mapper methane concentration rasters</td></tr><tr><th>Study sites</th><td>Southern California landfill sites</td></tr><tr><th>Dataset</th><td>363 usable plumes from 423 records</td></tr><tr><th>Predictors</th><td>Concentration distribution, plume size and shape, and fractal and multiscale structure</td></tr><tr><th>Models</th><td>Random forest, FFN, CNN, GRU, LTC, and FNO</td></tr><tr><th>Validation</th><td>Held-out sites and acquisition groups</td></tr></table>
   <p class="back-link"><a href="../projects.html">← Back to all projects</a></p>
   <footer><a href="../index.html">Home</a> · <a href="../cv.html">CV</a></footer>
 </body></html>
