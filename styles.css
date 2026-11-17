@@ -409,6 +409,21 @@ figcaption {
   font-weight: 700;
 }
 
+.contact-card {
+  max-width: 680px;
+  margin-top: 36px;
+  padding: clamp(26px, 5vw, 46px);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card h2 { margin-top: 0; }
+.contact-card p { margin: 22px 0; }
+.contact-card strong { color: var(--blue); font-size: 0.78rem; letter-spacing: 0.09em; text-transform: uppercase; }
+.contact-card p a { color: var(--navy); font-size: 1.08rem; font-weight: 700; }
+
 body > ul:not(.project-list),
 body > ol {
   max-width: 980px;
