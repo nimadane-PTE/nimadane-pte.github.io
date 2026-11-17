@@ -65,7 +65,7 @@ nav {
 }
 
 nav::before {
-  content: "NIMA DANESHVARNEJAD";
+  content: "Nima Daneshvarnejad  Energy / Petroleum Engineering Ph.D.";
   margin-right: auto;
   color: var(--navy);
   font-size: 0.78rem;
@@ -447,7 +447,8 @@ footer {
 @media (max-width: 820px) {
   body { padding: 0 20px 54px; font-size: 16px; }
   nav { margin: 0 -8px 36px; min-height: 62px; overflow-x: auto; }
-  nav::before { content: "ND"; font-size: 0.86rem; }
+  nav { flex-wrap: wrap; }
+  nav::before { flex-basis: 100%; margin: 2px 0 4px; font-size: 0.78rem; text-align: center; white-space: normal; }
   nav a { padding: 7px 10px; }
   .hero { grid-template-columns: 1fr; gap: 10px; padding: 32px 26px; border-radius: 22px; }
   .hero > *:not(.photo), .photo { grid-column: 1; }
@@ -462,7 +463,6 @@ footer {
 @media (max-width: 520px) {
   body { padding-inline: 15px; }
   nav { gap: 1px; padding-inline: 10px; }
-  nav::before { display: none; }
   nav a { flex: 1; padding-inline: 7px; text-align: center; font-size: 0.79rem; }
   h1 { font-size: 2.55rem; }
   .hero h1 { font-size: 2.7rem; }
